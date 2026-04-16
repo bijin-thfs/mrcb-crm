@@ -29,6 +29,9 @@ This CRM shares a **Supabase backend** with the customer PWA:
 - **Client:** `src/lib/supabase.ts` (uses `@supabase/ssr` `createBrowserClient`)
 - **Env vars:** `.env.local` (NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY) — also set in Vercel env vars
 - **Schema source of truth:** `supabase/schema.sql` in this repo
+- **Seed data:** `supabase/seed.sql` — 3 branches, 4 customers, 4 applications with explicit UUIDs
+- **Temp RLS:** `supabase/temp_anon_read.sql` — anon read policies for demo (remove after auth is set up)
+- **Supabase join syntax:** Use `customers(full_name)` NOT `customer:customers!fk(...)` — Supabase returns the table name as the key
 
 ### Database Tables
 | Table | Purpose |
