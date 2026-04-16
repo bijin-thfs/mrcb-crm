@@ -295,5 +295,5 @@ insert into public.applications (reference_number, customer_id, account_type, st
 insert into public.activity_log (action, entity_type, entity_id, details) values
   ('application_submitted', 'application', (select id from public.applications where reference_number = 'MRCB-20240001'), '{"customer_name": "Rahul Janardhanan", "account_type": "savings"}'::jsonb),
   ('application_submitted', 'application', (select id from public.applications where reference_number = 'MRCB-20240003'), '{"customer_name": "Kiran Kumar M.", "account_type": "savings"}'::jsonb),
-  ('kyc_verified', 'customer', (select id from public.customers where mobile = '9876543210'), '{"staff_name": "Elite Concierge", "doc_type": "aadhaar"}'::jsonb),
+  ('kyc_verified', 'customer', (select id from public.customers where mobile = '9876543210'), '{"staff_name": "Staff Name", "doc_type": "aadhaar"}'::jsonb),
   ('application_approved', 'application', (select id from public.applications where reference_number = 'MRCB-20240002'), '{"customer_name": "Sreelekshmi V.", "account_type": "current"}'::jsonb);

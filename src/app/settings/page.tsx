@@ -55,7 +55,7 @@ export default function SettingsPage() {
 
               {/* Info grid */}
               <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
-                <ProfileField label="Full Name" value="Elite Concierge Staff" />
+                <ProfileField label="Full Name" value="Staff Name" />
                 <ProfileField label="Designation" value="Senior Credit Officer" icon="badge" />
                 <ProfileField label="Staff ID" value="MRCB-2024-8842" />
                 <ProfileField label="Email" value="e.concierge@mayyanadbank.in" icon="mail" />

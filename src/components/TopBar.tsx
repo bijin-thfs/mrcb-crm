@@ -36,7 +36,7 @@ export default function TopBar() {
 
         {/* User avatar */}
         <button className="w-10 h-10 rounded-full heritage-gradient flex items-center justify-center text-white font-bold text-sm ml-2">
-          EC
+          SN
         </button>
       </div>
     </header>

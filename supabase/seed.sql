@@ -25,5 +25,5 @@ ON CONFLICT (reference_number) DO NOTHING;
 INSERT INTO public.activity_log (action, entity_type, entity_id, details) VALUES
   ('application_submitted', 'application', 'a1000000-0000-0000-0000-000000000001', '{"customer_name": "Rahul Janardhanan", "account_type": "savings"}'::jsonb),
   ('application_submitted', 'application', 'a1000000-0000-0000-0000-000000000003', '{"customer_name": "Kiran Kumar M.", "account_type": "savings"}'::jsonb),
-  ('kyc_verified', 'customer', 'c1000000-0000-0000-0000-000000000001', '{"staff_name": "Elite Concierge", "doc_type": "aadhaar"}'::jsonb),
+  ('kyc_verified', 'customer', 'c1000000-0000-0000-0000-000000000001', '{"staff_name": "Staff Name", "doc_type": "aadhaar"}'::jsonb),
   ('application_approved', 'application', 'a1000000-0000-0000-0000-000000000002', '{"customer_name": "Sreelekshmi V.", "account_type": "current"}'::jsonb);

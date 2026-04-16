@@ -20,7 +20,7 @@ type Application = {
 };
 
 const tabs = [
-  { key: "all", label: "All Leads" },
+  { key: "all", label: "All Applications" },
   { key: "new", label: "New" },
   { key: "reviewing", label: "Reviewing" },
   { key: "vkyc_pending", label: "VKYC Pending" },
@@ -112,7 +112,7 @@ export default function ApplicationsPage() {
             Administrative Portal
           </p>
           <h1 className="font-headline font-extrabold text-3xl lg:text-4xl text-primary">
-            Account Leads
+            Account Applications
           </h1>
           <p className="font-headline font-medium text-outline text-sm malayalam-text mt-1">
             മാനേജ്മെന്റ് സ്ക്രീൻ · Manage and review high-priority member applications
@@ -169,7 +169,7 @@ export default function ApplicationsPage() {
         </div>
 
         <div className="bg-secondary-container rounded-2xl p-5">
-          <p className="text-[11px] font-bold text-on-secondary-container uppercase tracking-widest">Today&apos;s Leads</p>
+          <p className="text-[11px] font-bold text-on-secondary-container uppercase tracking-widest">Today&apos;s Applications</p>
           <p className="text-[10px] text-on-secondary-container/60 malayalam-text">ഇന്നത്തെ അപേക്ഷകൾ</p>
           <p className="font-headline font-extrabold text-3xl text-on-secondary-container mt-2">{loading ? "—" : counts.today}</p>
           <p className="text-xs text-on-secondary-container/70 mt-0.5">New</p>

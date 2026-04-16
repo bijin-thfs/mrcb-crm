@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
+
 const navItems = [
   { href: "/", icon: "dashboard", label: "Dashboard" },
   { href: "/applications", icon: "description", label: "Account Applications", badge: 3 },
@@ -19,11 +20,11 @@ export default function Sidebar() {
     <aside className="fixed left-0 top-0 bottom-0 w-[72px] lg:w-[260px] bg-primary flex flex-col z-50 transition-all duration-300">
       {/* Logo */}
       <div className="px-4 lg:px-6 py-5 flex items-center gap-3">
-        <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0">
-          <span className="material-symbols-outlined text-secondary text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>
-            account_balance
-          </span>
-        </div>
+        <img
+          src="/mrcb-logo.png"
+          alt="MRCB"
+          className="w-10 h-10 rounded-full flex-shrink-0"
+        />
         <div className="hidden lg:block">
           <p className="font-headline font-bold text-white text-sm leading-tight">MRCB Staff</p>
           <p className="text-on-primary-container text-[11px]">സ്റ്റാഫ് പോർട്ടൽ</p>
@@ -34,10 +35,10 @@ export default function Sidebar() {
       <div className="px-3 lg:px-5 py-4 mx-3 lg:mx-4 rounded-xl bg-white/5 mb-4">
         <div className="flex items-center gap-3">
           <div className="w-9 h-9 rounded-full bg-secondary/30 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
-            EC
+            SN
           </div>
           <div className="hidden lg:block min-w-0">
-            <p className="text-white text-xs font-bold truncate">Elite Concierge</p>
+            <p className="text-white text-xs font-bold truncate">Staff Name</p>
             <p className="text-on-primary-container text-[10px]">MRCB Staff</p>
           </div>
         </div>

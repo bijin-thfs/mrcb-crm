@@ -33,11 +33,6 @@ export default function DashboardPage() {
             സ്റ്റാഫ് പോർട്ടലിലേക്ക് സ്വാഗതം
           </p>
         </div>
-        <div className="flex items-center gap-3">
-          <QuickAction icon="person_search" label="Member Lookup" />
-          <QuickAction icon="verified_user" label="KYC Update" />
-          <QuickAction icon="priority_high" label="Urgent Reviews" variant="warning" />
-        </div>
       </div>
 
       {/* Stats Row */}
@@ -148,22 +143,6 @@ export default function DashboardPage() {
           action="View"
           href="/applications"
         />
-        <div className="bg-secondary-container rounded-2xl p-6 shadow-[0_2px_16px_rgba(0,45,86,0.04)]">
-          <p className="text-xs font-bold text-on-secondary-container uppercase tracking-widest mb-2">
-            Staff Milestone
-          </p>
-          <p className="font-headline font-extrabold text-xl text-on-secondary-container mb-1">
-            Quarterly Top Processor
-          </p>
-          <div className="flex items-center gap-2 mt-3">
-            <span className="material-symbols-outlined text-secondary text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>
-              emoji_events
-            </span>
-            <span className="text-sm font-medium text-on-secondary-container">
-              Outstanding performance
-            </span>
-          </div>
-        </div>
       </div>
     </div>
   );
@@ -171,18 +150,6 @@ export default function DashboardPage() {
 
 /* ─── Sub-components ─── */
 
-function QuickAction({ icon, label, variant }: { icon: string; label: string; variant?: "warning" }) {
-  return (
-    <button className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all active:scale-95 ${
-      variant === "warning"
-        ? "bg-warning-container text-on-surface hover:bg-warning-container/80"
-        : "bg-surface-container-lowest text-primary hover:bg-surface-container-high shadow-[0_1px_4px_rgba(0,45,86,0.06)]"
-    }`}>
-      <span className="material-symbols-outlined text-lg">{icon}</span>
-      <span className="hidden sm:inline">{label}</span>
-    </button>
-  );
-}
 
 function StatCard({ label, malayalam, value, trend, trendUp, sub, variant, icon }: {
   label: string;
