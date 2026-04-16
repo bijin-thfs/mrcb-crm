@@ -12,7 +12,7 @@ type Application = {
   source: string;
   vkyc_status: string;
   submitted_at: string;
-  customer: {
+  customers: {
     full_name: string;
     mobile: string;
     email: string;
@@ -66,7 +66,7 @@ export default function ApplicationsPage() {
         source,
         vkyc_status,
         submitted_at,
-        customer:customers!applications_customer_id_fkey (
+        customers (
           full_name,
           mobile,
           email
@@ -84,9 +84,9 @@ export default function ApplicationsPage() {
     const matchesTab = activeTab === "all" || app.status === activeTab;
     const matchesSearch =
       !searchQuery ||
-      app.customer?.full_name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      app.customers?.full_name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
       app.reference_number.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      app.customer?.email?.toLowerCase().includes(searchQuery.toLowerCase());
+      app.customers?.email?.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesTab && matchesSearch;
   });
 
@@ -242,7 +242,7 @@ export default function ApplicationsPage() {
         {!loading && filtered.map((app) => {
           const type = accountTypeBadge[app.account_type] || accountTypeBadge.savings;
           const status = statusConfig[app.status] || statusConfig.new;
-          const initials = app.customer?.full_name
+          const initials = app.customers?.full_name
             ?.split(" ")
             .map((n) => n[0])
             .join("")
@@ -263,8 +263,8 @@ export default function ApplicationsPage() {
                   {initials}
                 </div>
                 <div className="min-w-0">
-                  <p className="text-sm font-bold text-primary truncate">{app.customer?.full_name || "Unknown"}</p>
-                  <p className="text-xs text-outline truncate">{app.customer?.email || app.customer?.mobile || "—"}</p>
+                  <p className="text-sm font-bold text-primary truncate">{app.customers?.full_name || "Unknown"}</p>
+                  <p className="text-xs text-outline truncate">{app.customers?.email || app.customers?.mobile || "—"}</p>
                 </div>
               </div>
 
