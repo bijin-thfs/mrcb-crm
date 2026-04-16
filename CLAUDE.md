@@ -74,7 +74,9 @@ src/
 │   ├── layout.tsx                        # Root layout with Sidebar + TopBar
 │   ├── globals.css                       # Shared design system tokens
 │   ├── applications/
-│   │   └── page.tsx                      # Account Applications queue (LIVE Supabase data)
+│   │   ├── page.tsx                      # Account Applications queue (LIVE Supabase data)
+│   │   └── [id]/
+│   │       └── page.tsx                  # Application detail/review (LIVE — docs, checklist, notes, actions)
 │   ├── loans/
 │   │   └── page.tsx                      # Loan Applications queue (mock data)
 │   ├── creditscore/
@@ -108,6 +110,13 @@ supabase/
 - Search by name, email, or reference number
 - Pagination UI
 - Empty state with bilingual message
+
+### Application Detail (`/applications/[id]`)
+- **LIVE DATA from Supabase** — fetches application + customer + documents + verification checks
+- **Left column:** Personal Details, Address, KYC Documents (with image preview thumbnails), VKYC Status, Account Preferences
+- **KYC Documents:** Uses DB records (`application_documents`) with fallback to Storage listing (`supabase.storage.list()`) — handles case where doc records aren't in DB but files exist in Storage
+- **Right column:** Verification Checklist (6 interactive checkboxes with progress bar, upserts to `verification_checks`), Internal Notes (add/view from `notes` table), Actions (Approve/Request Info/Reject — updates `applications.status`)
+- Approve enabled only when all 6 checks complete
 
 ### Loan Applications (`/loans`)
 - Two hero stat cards: Total Active Leads (navy) + Pending Approvals (gold)
