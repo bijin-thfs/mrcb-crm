@@ -1,0 +1,9 @@
+{
+  "enabledPlugins": {
+    "deploy-on-aws@agent-plugins-for-aws": true,
+    "aws-amplify@agent-plugins-for-aws": true,
+    "databases-on-aws@agent-plugins-for-aws": true,
+    "aws-serverless@agent-plugins-for-aws": true,
+    "migration-to-aws@agent-plugins-for-aws": true
+  }
+}
